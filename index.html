@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 12 Task</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+
+<body>
+  <h5>Name<span class="redman">*</span></h5>
+  <table>
+    <tr>
+      <td><input type="text"></td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td>First</td>
+      <td>Last</td>
+    </tr>
+  </table>
+
+  <h5>Email<span class="redman">*</span></h5>
+  <input class="email" type="text" placeholder="Email">
+  <h5>Your Experience:<span class="redman">*</span></h5>
+  <div class="star-rating">
+
+    <span class="star" data-value="1">&#9733;</span>
+    <span class="star" data-value="2">&#9733;</span>
+    <span class="star" data-value="3">&#9733;</span>
+    <span class="star" data-value="4">&#9733;</span>
+    <span class="star" data-value="5">&#9733;</span>
+  </div>
+  <p>Overall how would you like your experience with us</p>
+  <h5>How are you satisfied with<span class="redman">*</span></h5>
+  <table>
+    <tr class="table-1">
+      <td></td>
+      <td>Very Unsatisfied</td>
+      <td>Unsatisfied</td>
+      <td>Netural</td>
+      <td>Satisfied</td>
+      <td>Very Satisfied</td>
+    </tr>
+    <tr class="table-2">
+      <td>Purchase</td>
+      <td><input type="radio" name="option"></td>
+      <td><input type="radio" name="option"></td>
+      <td><input type="radio" name="option"></td>
+      <td><input type="radio" name="option"></td>
+      <td><input type="radio" name="option"></td>
+    </tr>
+    <tr class="table-1">
+      <td>Service</td>
+      <td><input type="radio" name="option1"></td>
+      <td><input type="radio" name="option1"></td>
+      <td><input type="radio" name="option1"></td>
+      <td><input type="radio" name="option1"></td>
+      <td><input type="radio" name="option1"></td>
+    </tr>
+    <tr class="table-2">
+      <td>Company Overall</td>
+      <td><input type="radio" name="option2"></td>
+      <td><input type="radio" name="option2"></td>
+      <td><input type="radio" name="option2"></td>
+      <td><input type="radio" name="option2"></td>
+      <td><input type="radio" name="option2"></td>
+    </tr>
+  </table>
+  <br>
+  <h5>How likely are you <span class="redman">*</span></h5>
+  <table>
+    <tr class="table-1">
+      <td></td>
+      <td>Very Unsatisfied</td>
+      <td>Unsatisfied</td>
+      <td>Netural</td>
+      <td>Satisfied</td>
+      <td>Very Satisfied</td>
+    </tr>
+    <tr class="table-2">
+      <td>Buy from us:</td>
+      <td><input type="radio" name="option4"></td>
+      <td><input type="radio" name="option4"></td>
+      <td><input type="radio" name="option4"></td>
+      <td><input type="radio" name="option4"></td>
+      <td><input type="radio" name="option4"></td>
+    </tr>
+    <tr class="table-1">
+      <td>Recommend our product to others:</td>
+      <td><input type="radio" name="option5"></td>
+      <td><input type="radio" name="option5"></td>
+      <td><input type="radio" name="option5"></td>
+      <td><input type="radio" name="option5"></td>
+      <td><input type="radio" name="option5"></td>
+    </tr>
+    <tr class="table-2">
+      <td>Recommend our company to others</td>
+      <td><input type="radio" name="option6"></td>
+      <td><input type="radio" name="option6"></td>
+      <td><input type="radio" name="option6"></td>
+      <td><input type="radio" name="option6"></td>
+      <td><input type="radio" name="option6"></td>
+    </tr>
+  </table> <br>
+
+  <h5>Additional Comments or suggestions<span class="redman">*</span></h5>
+  <textarea name="textarea" id="" cols="80" rows="5"></textarea>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.star').click(function () {
+        var value = $(this).data('value');
+        $('.star').removeClass('active');
+        for (var i = 1; i <= value; i++) {
+          $('.star[data-value="' + i + '"]').addClass('active');
+        }
+        $('#rating').text(value);
+      });
+    });
+  </script>
+
+</body>
+<style>
+  .star-rating {
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .star {
+    color: #ccc;
+    transition: color 0.25s;
+  }
+
+  .star:hover,
+  .star.active {
+    color: #f8d05d;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    border: 1px;
+    padding-left: 8px;
+    padding-right: 8px;
+
+  }
+
+  /* Fix the first row */
+  thead {
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+    z-index: 1;
+  }
+
+  /* Fix the first column */
+
+  .redman {
+    color: red;
+  }
+
+  .table-2 {
+    background-color: rgb(235, 235, 235);
+  }
+
+  input[type="text"] {
+    width: 200px;
+    /* Adjust the width as needed */
+  }
+
+  .email {
+    width: 500px;
+  }
+</style>
+
+</html>
